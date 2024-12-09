@@ -1,0 +1,105 @@
+[data-col=left] {
+    @extend %d_flex;
+    @extend %justify_content-center;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.logo {
+    @extend %d_flex; 
+    @extend %justify_content-center;
+
+    img {
+        @extend .d_block;
+        @extend .w_100;
+    }
+}
+
+.btn {
+    @extend .d_block; @extend %mx_auto;
+    border: solid 2px $color__white;
+    width: fit-content;
+    padding-block: 12px;
+    padding-inline: 16px;
+    min-width: 180px;
+    background-color: transparent;
+    font-size: clamp(16px, 4vw, 18px);
+    @include font($color__white, normal);
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 0.8px;
+
+    &:visited { color: $color__white; }
+
+    &:hover {
+        background-color: $color__white;
+        color: $color__black;
+        font-weight: 700;
+    }
+}
+
+.listenboxes {
+    @extend %d_flex; @extend %align_items-center;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.listenboxes__title {
+    @extend .d_block;
+    width: fit-content;
+    font-size: clamp(18px, 4vw, 28px);
+    @include font($color__white, 400);
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    text-align: center;
+}
+
+.listenboxes__container { 
+    @extend %d_flex; 
+    @extend %flow_wrap; 
+}
+
+.listenbox {
+    @extend %d_flex;
+    @extend %align_items-center;
+    @extend %justify_content-center;
+    color: $color__white;
+    border: solid 2px $color__white;
+    border-radius: 100%;
+    text-decoration: none;
+
+    &:visited { color: $color__white; }
+    img, picture { @extend .d_block; }
+    span { @extend .friendly_anchortext; }
+}
+
+@media(min-width: 580px) {
+    .logo {
+        img { max-width: 524px; height: 177px; }
+    }
+
+    .listenboxes__container { gap: 38px; }
+
+    .listenbox {
+        @include size(50px, 50px);
+        img, picture {
+            @include size(30px, 30px);
+        }
+    }
+}
+
+@media(max-width: 579.89px) {
+    .logo {
+        img { max-width: 310px; height: 105px; }
+    }
+
+    .listenboxes__container { gap: 28px; }
+
+    .listenbox {
+        @include size(40px, 40px);
+        img, picture {
+            @include size(20px, 20px);
+        }
+    }
+}

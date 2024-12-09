@@ -1,0 +1,26 @@
+@import './resources/variables';
+@import './resources/mixins';
+@import './resources/fonts';
+@import './resources/extends';
+@import './resources/reset';
+
+body { 
+    font-family: 'Playfair Display', sans-serif; 
+    background-color: $color__black; 
+    color: $color__white; 
+    letter-spacing: 2px;
+}
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: $color__black; }
+::-webkit-scrollbar-thumb { background: $color__white; }
+::-webkit-scrollbar-thumb:hover { background: $color__white; }
+::-moz-selection { color: $color__black; background: $color__white; }
+::selection { color: $color__black; background: $color__white; }
+.d_block { display: block; }
+.w_100 { width: 100%; }
+.friendly_anchortext { color: transparent; font-size: 0; letter-spacing: 0; } 
+
+@import './components/grid';
+@import './components/left';
+@import './components/right';
+@import './components/footer';

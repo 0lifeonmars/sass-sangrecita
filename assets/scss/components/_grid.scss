@@ -1,0 +1,26 @@
+.container { 
+    @extend %d_flex; @extend %justify_content-center; @extend %align_items-center;
+    @extend .w_100;
+}
+
+.row { 
+    @extend %d_flex; @extend %flow_wrap; 
+    @extend %mx_auto;
+    @extend .w_100;
+    gap: 24px;
+    max-width: 1280px;
+    padding-inline: 16px;
+}
+
+.col_6 {
+    @extend .w_100;
+}
+
+@media(min-width: 1100px) {
+    .container { padding-block: 24px; min-height: calc(100vh - 50px); }
+    .col_6 { max-width: calc((100% - 24px) / 2); }
+}
+
+@media(max-width: 1099.89px) { 
+    .container { padding-block: 48px; } 
+}
